@@ -1,5 +1,5 @@
 // Alert at the start
-alert("Ensure your window is on full screen. If you game over, reload the page or press the space bar. This flappy bird will start in about 10 seconds. Beware.");
+alert("Ensure your window is on full screen. If you game over, reload the page or press the space bar. This flappy bird will start in about 1 second. Beware.");
 
 let board;
 let boardWidth = 1320;
