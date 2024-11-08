@@ -167,6 +167,21 @@ function moveBird(e) {
             pipeArray = [];
             score = 0;
             gameOver = false;
+            if (score > highScore) {
+                highScore = score;
+            }
+
+            // Clear the previous frame before displaying Game Over text
+            context.clearRect(0, 0, board.width, board.height);
+            context.fillStyle = "rgba(0, 0, 0, 0.7)"; // Semi-transparent black background
+            context.fillRect(500, 280, 310, 165); // Adjust position and size as needed
+            context.fillStyle = "white";
+            context.font = "45px sans-serif";
+            context.fillText('GAME OVER', 520, 330);
+            context.fillText(`🏆: ${highScore}`, 600, 425); // Display high score once on game over screen
+
+            context.fillText(`Score: ${Math.floor(score)}`, 570, 380);
+            return;
         }
     }
 }
@@ -180,6 +195,21 @@ function moveBirdTouch() {
         pipeArray = [];
         score = 0;
         gameOver = false;
+        if (score > highScore) {
+            highScore = score;
+        }
+
+        // Clear the previous frame before displaying Game Over text
+        context.clearRect(0, 0, board.width, board.height);
+        context.fillStyle = "rgba(0, 0, 0, 0.7)"; // Semi-transparent black background
+        context.fillRect(500, 280, 310, 165); // Adjust position and size as needed
+        context.fillStyle = "white";
+        context.font = "45px sans-serif";
+        context.fillText('GAME OVER', 520, 330);
+        context.fillText(`🏆: ${highScore}`, 600, 425); // Display high score once on game over screen
+
+        context.fillText(`Score: ${Math.floor(score)}`, 570, 380);
+        return;
     }
 }
 
