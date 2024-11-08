@@ -60,6 +60,7 @@ window.onload = function() {
         requestAnimationFrame(update);
         setInterval(placePipes, 3000);
         document.addEventListener("keydown", moveBird);
+        document.addEventListener("touchstart", moveBirdTouch); // Add touch event listener
     }, 1000);
 }
 
@@ -167,6 +168,18 @@ function moveBird(e) {
             score = 0;
             gameOver = false;
         }
+    }
+}
+
+// Function to handle touch event for bird movement
+function moveBirdTouch() {
+    velocityY = -6;
+
+    if (gameOver) {
+        bird.y = birdY;
+        pipeArray = [];
+        score = 0;
+        gameOver = false;
     }
 }
 
